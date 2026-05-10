@@ -1,0 +1,64 @@
+.container{
+    padding: 3em 0;
+}
+
+.new-car h2{
+    text-align: center;
+    color: #234465;
+    font-size: 1.8em;
+    text-shadow: 2px 2px #96b9dd;
+    padding-bottom: 1em;
+}
+
+.new-car form{
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 2em;
+    max-width: 700px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 3.6em;
+}
+
+.fields{
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    padding: 1em;
+    justify-content: center;
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+}
+
+.new-car form button{
+    border-radius: 15px;
+    border: 1px solid #000;
+    padding: 0.5em 0.8em;
+    max-width: 250px;
+    display: block;
+    margin: 0 auto;
+    background-color: #234465;
+    color: #fff;
+}
+
+.new-car form button:hover {
+    cursor: pointer;
+    transform: scale(1.05); 
+}
+.field input, .field select{
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+
+

@@ -1,0 +1,234 @@
+<div class="container">
+    @if(!isLoading){
+
+    <div class="new-car">
+        <h2>New car post</h2>
+        <form class="add-form" #form="ngForm" (ngSubmit)="addCar(form)">
+            <div class="fields">
+                <div class="field new-car-brand">
+                    <label for="brand">Brand</label>
+                    <select name="brand" id="brand" ngModel #brand="ngModel" required>
+                        @for (brand of brands; track $index) {
+                        <option [value]="brand.name">{{brand.name}}</option>
+                        }
+                    </select>
+
+                    @if(brand?.touched){
+                    <div>
+                        @if(brand.errors?.['required']){
+                        <p class="error">
+                            Brand is required
+                        </p>
+                        }
+                    </div>
+                    }
+                </div>
+                <div class="field new-car-model">
+                    <label for="model">Model</label>
+                    <input type="text" id="model" name="model" ngModel #model="ngModel" required>
+                    @if(model?.touched){
+                    <div>
+                        @if(model.errors?.['required']){
+                        <p class="error">
+                            Model is required
+                        </p>
+                        }
+                    </div>
+                    }
+                </div>
+                <div class="field new-car-year">
+                    <label for="year">Year</label>
+                    <input type="text" id="year" name="year" ngModel #year="ngModel" required>
+
+                    @if(year?.touched){
+                    <div>
+                        @if(year.errors?.['required']){
+                        <p class="error">
+                            Year is required!
+                        </p>
+                        }
+
+                    </div>
+                    }
+                </div>
+
+                <div class="field new-car-image">
+                    <label for="firstImage">Front image URL</label>
+                    <input type="text" id="firstImage" name="firstImage" ngModel #firstImageUrl="ngModel" required>
+
+                    @if(firstImageUrl?.touched){
+                    <div>
+                        @if(firstImageUrl.errors?.['required']){
+                        <p class="error">
+                            Front image URL is required!
+                        </p>
+                        }
+
+                    </div>
+                    }
+                </div>
+
+                <div class="field new-car-image">
+                    <label for="secondImage">Back image URL</label>
+                    <input type="text" id="secondImage" name="secondImage" ngModel #secondImageUrl="ngModel" required>
+
+                    @if(secondImageUrl?.touched){
+                    <div>
+                        @if(secondImageUrl.errors?.['required']){
+                        <p class="error">
+                            Theme name is required!
+                        </p>
+                        }
+                    </div>
+                    }
+                </div>
+                <div class="field new-car-price">
+                    <label for="price">Price</label>
+                    <input type="number" id="price" name="price" ngModel #price="ngModel" appNonNegative required>
+
+
+                    @if(price?.touched){
+                    <div>
+                        @if(price.errors?.['required']){
+                        <span class="error">
+                            Price is required!
+                        </span>
+                        }
+
+                        @if(price.errors?.['nonNegativeValidator']){
+                        <p class="error">
+                            Price must be positive number!
+                        </p>
+                        }
+                    </div>
+                    }
+
+                </div>
+                <div class="field new-car-city">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" ngModel #city="ngModel" required>
+
+                    @if(city?.touched){
+                    <span>
+                        @if(city.errors?.['required']){
+                        <span class="error">
+                            City is required!
+                        </span>
+                        }
+                    </span>
+                    }
+
+                </div>
+                <div class="field new-car-kilometers">
+                    <label for="kilometers">Kilometers</label>
+                    <input type="text" id="kilometers" name="kilometers" ngModel #kilometers="ngModel" appNonNegative
+                        required>
+
+                    @if(kilometers?.touched){
+                    <div>
+                        @if(kilometers.errors?.['required']){
+                        <p class="error">
+                            Km are required!
+                        </p>
+                        }
+
+                        @if(kilometers.errors?.['nonNegativeValidator']){
+                        <span class="error">
+                            Km must be positive number!
+                        </span>
+                        }
+                    </div>
+                    }
+                </div>
+                <div class="field new-car-gearbox">
+                    <label for="gearbox">Gearbox</label>
+                    <input type="text" id="gearbox" name="gearbox" ngModel #gearbox="ngModel" required>
+
+                    @if(gearbox?.touched){
+                    <div>
+                        @if(gearbox.errors?.['required']){
+                        <p class="error">
+                            Gearbox is required!
+                        </p>
+                        }
+
+                    </div>
+                    }
+                </div>
+                <div class="field new-car-color">
+                    <label for="color">Color</label>
+                    <input type="text" id="color" name="color" ngModel #color="ngModel" required>
+                    @if(color?.touched){
+                    <div>
+                        @if(color.errors?.['required']){
+                        <p class="error">
+                            Color is required!
+                        </p>
+                        }
+                    </div>
+                    }
+                </div>
+                <div class="field new-car-doors">
+                    <label for="doors">Doors</label>
+                    <input type="number" id="doors" name="doors" ngModel #doors="ngModel" appNonNegative required>
+
+                    @if(doors?.touched){
+                    <div>
+                        @if(doors.errors?.['required']){
+                        <p class="error">
+                            Doors are required!
+                        </p>
+                        }
+
+                        @if(doors.errors?.['nonNegativeValidator']){
+                        <span class="error">
+                            Doors be positive number!
+                        </span>
+                        }
+                    </div>
+                    }
+                </div>
+                <div class="field new-car-horsepowers">
+                    <label for="horsepowers">Horsepowers</label>
+                    <input type="text" id="horsepowers" name="horsepowers" ngModel #horsepowers="ngModel" appNonNegative
+                        required>
+
+                    @if(horsepowers?.touched){
+                    <div>
+                        @if(horsepowers.errors?.['required']){
+                        <p class="error">
+                            Horsepowers are required!
+                        </p>
+                        }
+
+                        @if(horsepowers.errors?.['nonNegativeValidator']){
+                        <span class="error">
+                            Horsepowers be positive number!
+                        </span>
+                        }
+                    </div>
+                    }
+                </div>
+                <div class="field new-car-engine">
+                    <label for="engine">Engine</label>
+                    <input type="text" id="engine" name="engine" ngModel #engine="ngModel" required>
+
+                    @if(engine?.touched){
+                    <div>
+                        @if(engine.errors?.['required']){
+                        <p class="error">
+                            Engine are required!
+                        </p>
+                        }
+                    </div>
+                    }
+                </div>
+            </div>
+            <button [disabled]="form.invalid" [style]="{opacity: form.invalid ? 0.4 : 0.9}">Submit</button>
+        </form>
+    </div>
+    }@else {
+    <app-loader />
+    }
+
+</div>
