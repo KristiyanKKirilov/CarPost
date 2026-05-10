@@ -1,0 +1,73 @@
+.header-title{
+    width: 100%;
+    padding-left: 2em;
+    font-size: 1.5em;
+    padding-bottom: 1em;
+}
+
+.site-header{
+    padding: 1em;
+    background-color: #234465;
+    color: #fff
+}
+
+.header-nav{
+    display: flex;
+    justify-content: row;
+}
+
+.header-auth{
+    flex-grow: 1;
+}
+
+.nav-bar{
+    flex-grow: 1;
+}
+.nav-bar ul, .header-auth ul{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.header-auth ul{
+    justify-content: right;
+    padding-right: 3em;
+}
+
+.nav-bar ul{
+    padding-left: 3em;
+}
+.header-auth ul li,
+.nav-bar ul li{
+    list-style: none;
+    padding: 0.2em;
+}
+
+.header-auth ul li a,
+.nav-bar ul li a{
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header-auth ul li a:hover,
+.nav-bar ul li a:hover{
+    color: #a2a8d3;
+    cursor: pointer;
+}
+
+.sell{
+    background-color: #1383b3;
+    border-radius: 10px;
+}
+
+.sell:hover{
+    cursor: pointer;
+    transform: scale(1.05); 
+
+}
+
+.nav-bar ul li #sellText:hover{
+    color: #fff;
+}
+
