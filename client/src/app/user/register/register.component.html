@@ -1,0 +1,93 @@
+<form [formGroup]="form" (ngSubmit)="register()">
+    <h1>Create Account</h1>
+    <input
+     type="text" 
+     placeholder="Username"
+     id="username"
+     name="username"
+     formControlName="username" />
+
+     @if(form.get('username')?.touched){
+        <div>
+            @if(form.get('username')?.errors?.['required']){
+                <span class="error">
+                    Username is required!
+                </span>
+            }
+
+            @if(form.get('username')?.errors?.['minlength']){
+                <span class="error">
+                    Username must be at least 3 characters
+                </span>
+            }
+        </div>                
+    }
+
+    <input 
+    type="email" 
+    placeholder="Email"
+    id="email"
+    name="email"
+    formControlName="email" />
+
+    @if(form.get('email')?.touched){
+        <div>
+            @if(form.get('email')?.errors?.['required']){
+                <span class="error">
+                    Email is required!
+                </span>
+            }
+
+            @if(form.get('email')?.errors?.['emailValidator']){
+                <span class="error">
+                    Email is not valid!
+                </span>
+            }
+        </div>
+    }
+   
+
+    <input 
+    type="phone" 
+    placeholder="Phone number"
+    id="phoneNumber"
+    name="phoneNumber"
+    formControlName="phoneNumber" />
+
+    @if(form.get('phoneNumber')?.touched){
+        <div>
+            @if(form.get('phoneNumber')?.errors?.['required']){
+                <span class="error">
+                    Phone number is required!
+                </span>
+            }
+        </div>                
+    }
+
+    <input 
+    type="password" 
+    placeholder="Password"
+    id="password"
+    name="password"
+    formControlName="password" />
+
+    @if(form.get('password')?.touched){
+        <div>
+            @if(form.get('password')?.errors?.['required']){
+                <span class="error">
+                    Password is required!
+                </span>
+            }
+
+            @if(form.get('password')?.errors?.['minLength']){
+                <span class="error">       
+                    Password must be at least 5 chars!
+                </span>
+            }
+        </div>
+    }
+
+    <button
+    [disabled]="form.invalid"
+    [style]="{opacity: form.invalid ? 0.4 : 1}">Sign Up</button>
+</form>

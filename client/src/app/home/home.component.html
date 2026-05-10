@@ -1,0 +1,63 @@
+<div class="container">
+    <h2 class="container-title">Latest cars</h2>
+    <div class="wrapper">
+        @if(!isLoading){
+            @for (car of cars; track $index) {
+                <div class="vehicle-card">
+                    <div class="details">
+                        <div class="thumb-gallery">
+                            <img class="first"
+                                [src]="car.secondImageUrl" />
+                            <img class="second"
+                                [src]="car.firstImageUrl" />
+                        </div>
+                        <div class="info">
+                            <h3>{{car.brand}} {{car.model}}</h3>       
+                            <div class="first-info">
+                                <div class="price">
+                                    <span>Price</span>
+                                    <h4>${{car.price}}</h4>
+                                </div>
+                                <div class="price">
+                                    <span>Year</span>
+                                    <h4>{{car.year}}</h4>
+                                </div>
+                                <div class="price">
+                                    <span>City</span>
+                                    <h4>{{car.city}}</h4>
+                                </div>
+                            </div>         
+                            <div class="ctas">
+                                <a routerLink="/cars/{{car._id}}" class="btn primary">Details</a>
+                                <div style="clear:both;"></div>
+                            </div>                    
+                            <div class="specs">
+                                <div class="spec mpg">
+                                    <span>Engine</span>
+                                    <p>{{car.engine}}<span></span></p>
+                                </div>
+                                <div class="spec mpg">
+                                    <span>Gearbox</span>
+                                    <p>{{car.gearbox}}<span></span></p>
+                                </div>
+                                <div class="spec mpg">
+                                    <span>Horsepower</span>
+                                    <p>{{car.horsepowers}}<span>hp</span></p>
+                                </div>
+                                <div class="spec mpg">
+                                    <span>Kilometers</span>
+                                    <p>{{car.kilometers}}<span></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }@else {
+            <app-loader/>
+        }             
+    </div>
+    <div class="btn-more">
+        <button routerLink="/cars">More cars</button>
+    </div>
+</div>

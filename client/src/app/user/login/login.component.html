@@ -1,0 +1,49 @@
+<form [formGroup]="form" (ngSubmit)="login()">
+	<h1>Sign in</h1>
+	<input 
+	type="email" 
+	name="email"
+	placeholder="Email"
+	formControlName="email" />
+
+	@if(form.get('email')?.touched){
+        <div>
+            @if(form.get('email')?.errors?.['required']){
+                <span class="error">
+                    Email is required!
+                </span>
+            }
+
+            @if(form.get('email')?.errors?.['emailValidator']){
+                <span class="error">
+                    Email is not valid!
+                </span>
+            }
+        </div>
+    }
+
+	<input 
+	type="password"
+	name="password"
+	placeholder="Password"
+	formControlName="password" />
+
+	@if(form.get('password')?.touched){
+        <div>
+            @if(form.get('password')?.errors?.['required']){
+                <span class="error">
+                    Password is required!
+                </span>
+            }
+
+            @if(form.get('password')?.errors?.['minlength']){
+                <span class="error">       
+                    Password must be at least 5 chars!
+                </span>
+            }
+        </div>
+    }
+	<button 
+	[disabled]="form.invalid"
+	[style]="{opacity: form.invalid ? 0.4 : 1}">Sign In</button>
+</form>
