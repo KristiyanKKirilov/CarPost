@@ -1,0 +1,95 @@
+.container {
+    padding: 4em;
+    margin-bottom: 8.85em;
+}
+
+.current-car {
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 7px 25px -10px rgba(0, 0, 0, 0.43);
+}
+
+.car-details {
+    display: flex;
+}
+
+.car-image img {
+    width: 500px;
+    padding: 1em;
+}
+
+.car-info {
+    padding: 1em;
+}
+
+.brand-model-edit {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+label {
+    font-weight: bold;
+    width: 90px;
+}
+
+p.field {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.edit-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.car-info span::after {
+    background-color: #000;
+    padding: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.car-details span {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: left;
+}
+
+.car-owner-phone {
+    padding: 1em;
+    border: 1px solid #000;
+    border-radius: 30px;
+    background-color: #234465;
+    color: #fff;
+}
+
+.user-details {
+    padding: 1em;
+}
+
+.user-details hr {
+    margin-bottom: 1em;
+}
+
+.center {
+    text-align: center;
+}
+
+.edit-btn {
+    background-color: #234465;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.edit-btn:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+
+}

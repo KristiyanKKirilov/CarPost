@@ -1,0 +1,155 @@
+@if(!isLoading && user?._id == car.userId._id){
+    <div class="container">
+        <div class="current-car">
+            <div class="car-details">
+                <main class="car-image">
+                    <img [src]="car.firstImageUrl" alt="">
+                    <div class="user-details">
+                        <p class="center">
+                            {{car.userId.username | slice : 15}} posted on {{car.createdAt | elapsedTime}}
+                        </p>
+                        <hr>           
+                    </div>
+                </main>
+                <form  #form="ngForm" (ngSubmit)="editCar(form)">
+                <aside class="car-info">
+                    <div class="brand-model-edit">
+                        <p>
+                            <label for="brand">Brand</label>
+                            <input type="text" 
+                            name="brand"
+                            id="brand"
+                            [(ngModel)]="car.brand"
+                            #brand="ngModel"
+                            required>
+                        </p>
+                        <p>
+                            <label for="model">Model</label>
+                            <input type="text" 
+                            name="model"
+                            id="model"
+                            [(ngModel)]="car.model"
+                            #model="ngModel"
+                            required>
+                        </p>
+                    </div>
+                    <span></span>
+                    <div class="edit-fields">
+
+                    <p class="field">
+                        <label for="firstImageUrl">Front image:</label>
+                        <input 
+                        type="text"
+                        id="firstImageUrl"
+                        name="firstImageUrl"
+                        [(ngModel)]="car.firstImageUrl"
+                        #firstImageUrl="ngModel"
+                        required>
+                    </p>
+                    <p class="field">
+                        <label for="secondImageUrl">Back image:</label>
+                        <input 
+                        type="text"
+                        id="secondImageUrl"
+                        name="secondImageUrl"
+                        [(ngModel)]="car.secondImageUrl"
+                        #secondImageUrl="ngModel"
+                        required>
+                    </p>
+                    <p class="field">
+                        <label for="year">Year:</label>
+                        <input 
+                        type="text"
+                        id="year"
+                        name="year"
+                        [(ngModel)]="car.year"
+                        #year="ngModel"
+                        required>
+                    </p>
+                    <p class="field">
+                        <label for="price">Price:</label>
+                        <input 
+                        type="number"
+                        id="price"
+                        name="price"
+                        [(ngModel)]="car.price"
+                        #price="ngModel"
+                        required>
+                    </p>
+                    <p class="field">
+                        <label for="city">City:</label>
+                        <input 
+                        type="text"
+                        id="city"
+                        name="city"
+                        [(ngModel)]="car.city"
+                        #city="ngModel"
+                        required>
+                    </p>
+                    <p class="field">
+                        <label for="engine">Engine:</label>
+                        <input 
+                        type="text"
+                        id="engine"
+                        name="engine"
+                        [(ngModel)]="car.engine"
+                        #engine="ngModel"
+                        required>
+                    </p>
+                    <p class="field">
+                        <label for="kilometers">Kilometers:</label>
+                        <input 
+                        type="number"
+                        id="kilometers"
+                        name="kilometers"
+                        [(ngModel)]="car.kilometers"
+                        #kilometers="ngModel"
+                        required>
+                    </p>
+                    <p class="field">
+                        <label for="gearbox">Gearbox:</label>
+                        <input 
+                        type="text"
+                        id="gearbox"
+                        name="gearbox"
+                        [(ngModel)]="car.gearbox"
+                        #gearbox="ngModel"
+                        required>
+                    </p>
+                    <p class="field">
+                        <label for="color">Color:</label>
+                        <input 
+                        type="text"
+                        id="color"
+                        name="color"
+                        [(ngModel)]="car.color"
+                        #color="ngModel"
+                        required>
+                    </p>
+                    <p class="field">
+                        <label for="doors">Doors:</label>
+                        <input 
+                        type="number"
+                        id="doors"
+                        name="doors"
+                        [(ngModel)]="car.doors"
+                        #doors="ngModel"
+                        required>
+                    </p>
+                    <button 
+                    class="edit-btn"
+                    [disabled]="form.invalid"
+                    [style]="{opacity: form.invalid ? 0.4 : 0.9 }">Edit</button>
+                </div>
+
+                </aside>
+            </form>
+
+            </div>
+            
+        </div>
+    </div>
+    }@else {
+        <app-loader/>
+    }
+    
