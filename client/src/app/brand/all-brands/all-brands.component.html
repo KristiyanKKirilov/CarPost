@@ -1,0 +1,19 @@
+<div class="container">
+    <h2 class="container-title">All brands</h2>
+    <div class="wrapper">
+        @if(!isLoading){
+
+        @for (brand of brands; track $index) {
+            <div class="brand-card" [routerLink]="brand._id.toString()">
+                <figure>
+                    <img [src]="brand.imageUrl" [alt]="brand.name">
+                    <figcaption>{{brand.name}}</figcaption>
+                </figure>
+            </div>
+        }
+    }@else {
+        <app-loader/>
+    }
+    
+    </div>
+</div>
