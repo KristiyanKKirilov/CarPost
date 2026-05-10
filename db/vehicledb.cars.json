@@ -1,0 +1,392 @@
+[{
+  "_id": {
+    "$oid": "676319c02ff908cfe9e4bfd4"
+  },
+  "brand": "BMW",
+  "model": "M4",
+  "price": 12000,
+  "year": "2016",
+  "city": "Burgas",
+  "kilometers": 130000,
+  "engine": "Diesel 3.0",
+  "color": "Black",
+  "gearbox": "Manual",
+  "horsepowers": 300,
+  "doors": 4,
+  "firstImageUrl": "https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/20309e251cb7341d1fb94cb5d4546882260d2202/photos/r4785Rzg-lmtbsqM6zB-(edit).jpg?t=168796880280",
+  "secondImageUrl": "https://67cdn.co.uk/137/3/250160/16539232876294ddd7bf068_img-7446-large.jpg?width=480",
+  "userId": {
+    "$oid": "67627f2d800641ab5953dfe9"
+  },
+  "createdAt": {
+    "$date": "2026-12-18T18:51:44.699Z"
+  },
+  "updatedAt": {
+    "$date": "2026-12-19T18:51:49.801Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6764500dce0362f49fb5e261"
+  },
+  "brand": "Mercedes",
+  "model": "CLS",
+  "price": 11000,
+  "year": "2003",
+  "city": "Ruse",
+  "kilometers": 140000,
+  "engine": "Diesel 3.5",
+  "color": "Red",
+  "gearbox": "Automatic",
+  "horsepowers": 210,
+  "doors": 4,
+  "firstImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQofF4lJhTQcOPiatQBxxsgRP7WCyEd3AVORQ&s",
+  "secondImageUrl": "https://mercedes-benz-archive.com/marsMuseum/Thumbnail?oid=182103214&version=-2&thumbnailVersion=3",
+  "userId": {
+    "$oid": "67627f2d800641ab5953dfe9"
+  },
+  "createdAt": {
+    "$date": "2026-12-19T16:55:41.726Z"
+  },
+  "updatedAt": {
+    "$date": "2026-12-19T18:56:44.939Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67645079ce0362f49fb5e278"
+  },
+  "brand": "VW",
+  "model": "Passat 8",
+  "price": 11000,
+  "year": "2014",
+  "city": "Plovdiv",
+  "kilometers": 80000,
+  "engine": "Diesel 2.0",
+  "color": "Dark blue",
+  "gearbox": "Manual",
+  "horsepowers": 150,
+  "doors": 4,
+  "firstImageUrl": "https://mobistatic3.focus.bg/mobile/photosorg/265/1/big1/11693047670022265_WI.webp",
+  "secondImageUrl": "https://ireland.apollo.olxcdn.com/v1/files/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmbiI6ImVqZWNpNjUxYmRzOTItT1RPTU9UT1BMIn0.4-dp7bGXyUcsmTypoXgKeOSuZLNms_MnP0SYY-RuIso/image;s=5120x0;q=100",
+  "userId": {
+    "$oid": "67645060ce0362f49fb5e275"
+  },
+  "createdAt": {
+    "$date": "2026-12-19T16:57:29.637Z"
+  },
+  "updatedAt": {
+    "$date": "2026-12-19T16:57:29.637Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "676485253b2f588acd2526a1"
+  },
+  "brand": "VW",
+  "model": "GOLF 7",
+  "price": 6000,
+  "year": "2010",
+  "city": "Nesebar",
+  "kilometers": 110000,
+  "engine": "Diesel 1.9 ",
+  "color": "Gold",
+  "gearbox": "Automatic",
+  "horsepowers": 110,
+  "doors": 4,
+  "firstImageUrl": "https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1634072702/autoexpress/2021/10/Volkswagen%20Golf%20Mk7%20used%20review-26.jpg",
+  "secondImageUrl": "https://blog.autosphere.fr/wp-content/uploads/2021/12/VWgolf7-arriere-copy.jpg",
+  "userId": {
+    "$oid": "676484653b2f588acd252696"
+  },
+  "createdAt": {
+    "$date": "2026-12-19T20:42:13.097Z"
+  },
+  "updatedAt": {
+    "$date": "2026-12-19T20:42:13.097Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67648f5e3b2f588acd252813"
+  },
+  "brand": "Skoda",
+  "model": "Octavia",
+  "price": 18000,
+  "year": "2018",
+  "city": "Razgrad",
+  "kilometers": 112000,
+  "engine": "Diesel 2.0",
+  "color": "Red",
+  "gearbox": "Automatic",
+  "horsepowers": 210,
+  "doors": 4,
+  "firstImageUrl": "https://m.atcdn.co.uk/a/media/w600/0182ac07b4a949b0b79095aac4e81ef8.jpg",
+  "secondImageUrl": "https://bluesky.cdn.imgeng.in/cogstock-images/at-9de7bcb482554d229f40f3cc05d74ce0.jpg?imgeng=/w_1200/",
+  "userId": {
+    "$oid": "676484653b2f588acd252696"
+  },
+  "createdAt": {
+    "$date": "2026-12-19T21:25:50.978Z"
+  },
+  "updatedAt": {
+    "$date": "2026-12-19T21:25:50.978Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "676490113b2f588acd25281f"
+  },
+  "brand": "Skoda",
+  "model": "Supreb",
+  "price": 13000,
+  "year": "2016",
+  "city": "Plovdiv",
+  "kilometers": 80000,
+  "engine": "Benzin 2.5",
+  "color": "Black",
+  "gearbox": "Manual",
+  "horsepowers": 150,
+  "doors": 4,
+  "firstImageUrl": "https://assets.choosemycar.com/vehicles/large/5921280_561_6397_vehicle-5921280-001-20260423-090601-7b59976a78b177a211609442896eb7da34503820f2cce3c0f14ea0918710c97c.jpg",
+  "secondImageUrl": "https://assets.choosemycar.com/vehicles/medium/6627013_5841_899_vehicle-6627013-002-20261213-074401-3b1e97f2ee6247f4f6b28b09ac81c3afb0abcc8eff83a3b24be41f823a3583c2.jpg",
+  "userId": {
+    "$oid": "676484653b2f588acd252696"
+  },
+  "createdAt": {
+    "$date": "2026-12-19T21:28:49.294Z"
+  },
+  "updatedAt": {
+    "$date": "2026-12-19T21:28:49.294Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6764906e3b2f588acd25282b"
+  },
+  "brand": "Peugeout",
+  "model": "3008",
+  "price": 31000,
+  "year": "2021",
+  "city": "Blagoevgrad",
+  "kilometers": 13000,
+  "engine": "Diesel 2.2",
+  "color": "Red",
+  "gearbox": "Automatic",
+  "horsepowers": 170,
+  "doors": 4,
+  "firstImageUrl": "https://img.cdn.dragon2000.net/C2610/U42185/IMG_92691-large.jpg",
+  "secondImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPGrVKOZg3-Jo0yoco82dr6K0KNVUsed9vgrPV5_FCzgWaH-ycKm2HAmtfoCTxRkpRNUY&usqp=CAU",
+  "userId": {
+    "$oid": "67627f2d800641ab5953dfe9"
+  },
+  "createdAt": {
+    "$date": "2026-12-19T21:30:22.175Z"
+  },
+  "updatedAt": {
+    "$date": "2026-12-19T21:30:22.175Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "676490d63b2f588acd252834"
+  },
+  "brand": "Peugeout",
+  "model": "308",
+  "price": 8000,
+  "year": "2016",
+  "city": "Vratsa",
+  "kilometers": 90000,
+  "engine": "Diesel 1.6",
+  "color": "White",
+  "gearbox": "Manual",
+  "horsepowers": 110,
+  "doors": 4,
+  "firstImageUrl": "https://images.clickdealer.co.uk/vehicles/6480/6480112/large1/154374550.jpg",
+  "secondImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk8U46vSuIr2AY6lpT1Yn26gVkyGNgg4VxhNvvhv-UkN2voRobA89M1YVxeZVjc30Px6w&usqp=CAU",
+  "userId": {
+    "$oid": "67627f2d800641ab5953dfe9"
+  },
+  "createdAt": {
+    "$date": "2026-12-19T21:32:06.236Z"
+  },
+  "updatedAt": {
+    "$date": "2026-12-19T21:32:06.236Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6764916b3b2f588acd252841"
+  },
+  "brand": "Mercedes",
+  "model": "E Class",
+  "price": 4000,
+  "year": "2007",
+  "city": "Ruse",
+  "kilometers": 220000,
+  "engine": "Diesel 2.7",
+  "color": "Grey",
+  "gearbox": "Manual",
+  "horsepowers": 240,
+  "doors": 4,
+  "firstImageUrl": "https://cdn.images.autoexposure.co.uk/AETA14826/AETV37716347_1e.jpg",
+  "secondImageUrl": "https://a.d-cd.net/7AAAAgE5FOA-480.jpg",
+  "userId": {
+    "$oid": "676490fc3b2f588acd25283c"
+  },
+  "createdAt": {
+    "$date": "2026-12-19T21:34:35.674Z"
+  },
+  "updatedAt": {
+    "$date": "2026-12-19T21:34:35.674Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "676491d33b2f588acd252846"
+  },
+  "brand": "Mercedes",
+  "model": "A Class",
+  "price": 11000,
+  "year": "2014",
+  "city": "Silistra",
+  "kilometers": 70000,
+  "engine": "Diesel 1.9",
+  "color": "Blue",
+  "gearbox": "Manual",
+  "horsepowers": 120,
+  "doors": 4,
+  "firstImageUrl": "https://f7432d8eadcf865aa9d9-9c672a3a4ecaaacdf2fee3b3e6fd2716.ssl.cf3.rackcdn.com/C2754/U222/IMG_2914-medium.jpg",
+  "secondImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdOAiiK6sp7Ai3RJkPpL0fnalG5HjfGX1_cA&s",
+  "userId": {
+    "$oid": "676490fc3b2f588acd25283c"
+  },
+  "createdAt": {
+    "$date": "2026-12-19T21:36:19.360Z"
+  },
+  "updatedAt": {
+    "$date": "2026-12-19T21:36:34.945Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6764923f3b2f588acd252857"
+  },
+  "brand": "Dacia",
+  "model": "Sandero",
+  "price": 3500,
+  "year": "2011",
+  "city": "Razgrad",
+  "kilometers": 230000,
+  "engine": "Benzin 1.8",
+  "color": "Dark Grey",
+  "gearbox": "Manual",
+  "horsepowers": 100,
+  "doors": 4,
+  "firstImageUrl": "https://images.autouncle.com/it/car_images/medium_ef3e81d7-357c-4d2f-8925-c84781a88c29_dacia-sandero-sandero-stepway-1-6-8v-85-cv.jpg",
+  "secondImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTRPNOvrzISv4j25oKix8ziHu_6hcMkOyG5IIT6dowJBJkfq78L6WhY6mgLHUKTmXso6U&usqp=CAU",
+  "userId": {
+    "$oid": "676490fc3b2f588acd25283c"
+  },
+  "createdAt": {
+    "$date": "2026-12-19T21:38:07.946Z"
+  },
+  "updatedAt": {
+    "$date": "2026-12-19T21:38:07.946Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6764928a3b2f588acd25285c"
+  },
+  "brand": "Dacia",
+  "model": "Duster",
+  "price": 11000,
+  "year": "2015",
+  "city": "Varna",
+  "kilometers": 72000,
+  "engine": "Benzin 2.0",
+  "color": "Dark Green",
+  "gearbox": "Automatic",
+  "horsepowers": 130,
+  "doors": 4,
+  "firstImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXhnktCXRse0kVZC412qwxYjAZ1KBqGIFwfw&s",
+  "secondImageUrl": "https://ireland.apollo.olxcdn.com/v1/files/mhgf01ys2hi12-PL/image;s=1848x1446",
+  "userId": {
+    "$oid": "676490fc3b2f588acd25283c"
+  },
+  "createdAt": {
+    "$date": "2026-12-19T21:39:22.780Z"
+  },
+  "updatedAt": {
+    "$date": "2026-12-19T21:39:22.780Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6764931f3b2f588acd252862"
+  },
+  "brand": "Chevrolet",
+  "model": "Cruze",
+  "price": 7100,
+  "year": "2014",
+  "city": "Sofia",
+  "kilometers": 91000,
+  "engine": "Diesel 1.9",
+  "color": "Grey",
+  "gearbox": "Manual",
+  "horsepowers": 130,
+  "doors": 4,
+  "firstImageUrl": "https://m.atcdn.co.uk/a/media/%7Bresize%7D/25b0376801ad4ec6959f2d3b7974ac5b.jpg",
+  "secondImageUrl": "https://m.atcdn.co.uk/a/media/%7Bresize%7D/366298e63dfe4563a6ef0909a9aca226.jpg",
+  "userId": {
+    "$oid": "676490fc3b2f588acd25283c"
+  },
+  "createdAt": {
+    "$date": "2026-12-19T21:41:51.496Z"
+  },
+  "updatedAt": {
+    "$date": "2026-12-19T21:41:51.496Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6764939f3b2f588acd252872"
+  },
+  "brand": "BMW",
+  "model": "X2",
+  "price": 42000,
+  "year": "2021",
+  "city": "Varna",
+  "kilometers": 60000,
+  "engine": "Diesel 2.2",
+  "color": "Black",
+  "gearbox": "Automatic",
+  "horsepowers": 190,
+  "doors": 4,
+  "firstImageUrl": "https://vcache.arnoldclark.com/imageserver/ADRFNH0147DA-S-/350/f",
+  "secondImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwrtOtjja-EqeuaLnMKCegkzv5v5ahH5Ykog&s",
+  "userId": {
+    "$oid": "67627f2d800641ab5953dfe9"
+  },
+  "createdAt": {
+    "$date": "2026-12-19T21:43:59.729Z"
+  },
+  "updatedAt": {
+    "$date": "2026-12-19T21:43:59.729Z"
+  },
+  "__v": 0
+}]

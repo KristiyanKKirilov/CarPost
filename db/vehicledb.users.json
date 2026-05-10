@@ -1,0 +1,70 @@
+[{
+  "_id": {
+    "$oid": "6759c0426749216e15266f44"
+  },
+  "name": "Audi",
+  "imageUrl": "https://uploads.audi-mediacenter.com/system/production/media/1282/images/bde751ee18fe149036c6b47d7595f6784f8901f8/AL090142_web_2880.jpg?1698171883"
+},
+{
+  "_id": {
+    "$oid": "6759c08f6749216e15266f45"
+  },
+  "name": "BMW",
+  "imageUrl": "https://awards.brandingforum.org/wp-content/uploads/2016/11/BMW-logo.jpg"
+},
+{
+  "_id": {
+    "$oid": "6759c0a06749216e15266f46"
+  },
+  "name": "Chevrolet",
+  "imageUrl": "https://blog.logomaster.ai/hs-fs/hubfs/chevrolet-logo-2013.jpg?width=672&height=454&name=chevrolet-logo-2013.jpg"
+},
+{
+  "_id": {
+    "$oid": "6759c0ad6749216e15266f47"
+  },
+  "name": "Dacia",
+  "imageUrl": "https://media.dacia.com/wp-content/uploads/2024/01/7a772800e6cac7d38f38a87b705d52b6.jpg"
+},
+{
+  "_id": {
+    "$oid": "6762b84bd13339e651bf4cf0"
+  },
+  "name": "Huyndai",
+  "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGXLdzohuVaUik2pXDoa9_8_wpUipMdAUcwA&s"
+},
+{
+  "_id": {
+    "$oid": "6762b870d13339e651bf4cf1"
+  },
+  "name": "Kia",
+  "imageUrl": "https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/660/kia-logo-new-512.png"
+},
+{
+  "_id": {
+    "$oid": "6762b883d13339e651bf4cf2"
+  },
+  "name": "Mercedes",
+  "imageUrl": "https://images.seeklogo.com/logo-png/9/2/mercedes-benz-logo-png_seeklogo-91081.png?v=638687207070000000"
+},
+{
+  "_id": {
+    "$oid": "6762b894d13339e651bf4cf3"
+  },
+  "name": "Peugeout",
+  "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrb9OceAW51iWudPS79wsCg3HYofT6A2kc2Pkb48fhjUqJ1N5PkPr8DkkYu6pyiZbSHtU&usqp=CAU"
+},
+{
+  "_id": {
+    "$oid": "6762b8b2d13339e651bf4cf4"
+  },
+  "name": "Skoda",
+  "imageUrl": "https://cdn.skoda-storyboard.com/2020/11/SKODA-3D-Standard-Logo_sRGB-e1478246875778.png"
+},
+{
+  "_id": {
+    "$oid": "6762b8c1d13339e651bf4cf5"
+  },
+  "name": "VW",
+  "imageUrl": "https://upload.wikimedia.org/wikinews/en/d/d3/Volkswagen_logo.png"
+}]
