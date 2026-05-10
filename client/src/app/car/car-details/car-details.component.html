@@ -1,0 +1,29 @@
+@if(!isLoading){
+<div class="container">
+    <div class="current-car">
+        <div class="car-details">
+            <main class="car-image">
+                <img [src]="car.firstImageUrl" alt="">
+            </main>
+            <aside class="car-info">
+                <h3>{{car.brand}} {{car.model}}</h3>
+                <p>Year: {{car.year}}</p>
+                <p>Price: {{car.price}}$</p>
+                <p>City: {{car.city}}</p>
+                <p>Engine: {{car.engine}}</p>
+                <p>Kilomenters: {{car.kilometers}}</p>
+                <p>Gearbox: {{car.gearbox}}</p>
+                <p>Color: {{car.color}}</p>
+                <p>Doors: {{car.doors}}</p>
+            </aside>
+            <span><p class="car-owner-phone">{{car.userId.phoneNumber}}</p></span>
+        </div>
+        <div class="user-details">
+            <p class="center">{{car.userId.username | slice: 15}} posted on {{car.createdAt | elapsedTime}}</p>
+            <hr>           
+        </div>
+    </div>
+</div>
+}@else {
+    <app-loader/>
+}
