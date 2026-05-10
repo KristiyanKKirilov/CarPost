@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>{{user?.username}}'s profile</h2>
+    <div class="wrapper">
+
+    @if(!isLoading){
+        @for (car of cars; track $index) {
+            <div class="vehicle-card">
+                <div class="details">
+                    <div class="thumb-gallery">
+                        <img class="first"
+                            [src]="car.secondImageUrl" />
+                        <img class="second"
+                            [src]="car.firstImageUrl" />
+                    </div>
+                    <div class="buttons">
+                        <button class="edit-btn" routerLink="/edit/{{car._id}}">Edit</button>
+                        <button class="delete-btn" (click)="deleteCar(car._id)">Delete</button>  
+                    </div>
+                    
+                </div>
+            </div>
+        }                      
+    }@else {
+        <app-loader/>
+    }
+</div>
+
+</div>
