@@ -1,10 +1,10 @@
 const jwt = require('./jwt');
-const { auth, isAdmin } = require('./auth');
+const { auth, isOwner } = require('./auth');
 const errorHandler = require('./errHandler');
 
 module.exports = {
     jwt,
     auth,
-    isAdmin,
+    isOwner,
     errorHandler
 }

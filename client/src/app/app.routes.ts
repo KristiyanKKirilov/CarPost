@@ -8,7 +8,6 @@ import { AllCarsComponent } from './car/all-cars/all-cars.component';
 import { AddCarComponent } from './car/add-car/add-car.component';
 import { CurrentBrandComponent } from './brand/current-brand/current-brand.component';
 import { AuthGuard } from './guards/auth.guard';
-import { AdminGuard } from './guards/admin.guard';
 import { ProfileComponent } from './user/profile/profile.component';
 import { EditCarComponent } from './car/edit-car/edit-car.component';
 
@@ -28,7 +27,7 @@ export const routes: Routes = [
     {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
     {path: 'edit', children: [
         {path: '', component: ProfileComponent},
-        {path: ':id', component: EditCarComponent, canActivate: [AuthGuard, AdminGuard]},
+        {path: ':id', component: EditCarComponent, canActivate: [AuthGuard]},
     ]},
     {path: '404', component: ErrorComponent},
     {path: '**', redirectTo: '/404'}

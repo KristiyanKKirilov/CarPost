@@ -83,9 +83,11 @@
                     }
                 </div>
                 <div class="field new-car-price">
-                    <label for="price">Price</label>
-                    <input type="number" id="price" name="price" ngModel #price="ngModel" appNonNegative required>
-
+                    <label for="price">Price (€)</label>
+                    <div class="price-input-wrapper">
+                        <input type="number" id="price" name="price" ngModel #price="ngModel" appNonNegative required placeholder="Enter price in EUR">
+                        <span class="currency-label">EUR</span>
+                    </div>
 
                     @if(price?.touched){
                     <div>
@@ -142,7 +144,11 @@
                 </div>
                 <div class="field new-car-gearbox">
                     <label for="gearbox">Gearbox</label>
-                    <input type="text" id="gearbox" name="gearbox" ngModel #gearbox="ngModel" required>
+                    <select id="gearbox" name="gearbox" ngModel #gearbox="ngModel" required>
+                        <option value="" disabled>Select gearbox type</option>
+                        <option value="Manual">Manual</option>
+                        <option value="Automatic">Automatic</option>
+                    </select>
 
                     @if(gearbox?.touched){
                     <div>
@@ -211,13 +217,18 @@
                 </div>
                 <div class="field new-car-engine">
                     <label for="engine">Engine</label>
-                    <input type="text" id="engine" name="engine" ngModel #engine="ngModel" required>
+                    <select id="engine" name="engine" ngModel #engine="ngModel" required>
+                        <option value="" disabled>Select engine type</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="Benzin">Benzin</option>
+                        <option value="Gas">Gas</option>
+                    </select>
 
                     @if(engine?.touched){
                     <div>
                         @if(engine.errors?.['required']){
                         <p class="error">
-                            Engine are required!
+                            Engine is required!
                         </p>
                         }
                     </div>

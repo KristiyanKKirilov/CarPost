@@ -10,7 +10,6 @@ const userSchema = new mongoose.Schema({
     username: { type: String, required: true, unique: true, minlength: 3 },
     password: { type: String, required: true, minlength: 5 },
     cars: [{ type: ObjectId, ref: "Car" }],
-    isAdmin: { type: Boolean, default: false },
 }, { timestamps: true }); // Automatically handles created_at and updatedAt
 
 

@@ -20,10 +20,6 @@ export class UserService {
       return !!this.user;
     }
 
-    get isAdmin(): boolean{
-      return this.user?.isAdmin || false;
-    }
-
   constructor(private http: HttpClient) {
     this.user$.subscribe((user) => {
       this.user = user;

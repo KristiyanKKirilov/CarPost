@@ -8,7 +8,7 @@
             <aside class="car-info">
                 <h3>{{car.brand}} {{car.model}}</h3>
                 <p>Year: {{car.year}}</p>
-                <p>Price: {{car.price}}$</p>
+                <p>Price: {{car.price}} eur</p>
                 <p>City: {{car.city}}</p>
                 <p>Engine: {{car.engine}}</p>
                 <p>Kilomenters: {{car.kilometers}}</p>
@@ -22,7 +22,7 @@
             <p class="center">{{car.userId.username | slice: 15}} posted on {{car.createdAt | elapsedTime}}</p>
             <hr>
             
-            @if(isAdmin){
+            @if(isOwner){
                 <div style="display: flex; gap: 10px; justify-content: center; margin-top: 15px;">
                     <button (click)="editCar()" 
                             style="padding: 8px 16px; background-color: #2196F3; color: white; border: none; border-radius: 4px; cursor: pointer;">
@@ -30,7 +30,8 @@
                     </button>
                     <button (click)="deleteCar()" 
                             [disabled]="isDeleting"
-                            style="padding: 8px 16px; background-color: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer; opacity: {{ isDeleting ? 0.6 : 1 }};">
+                            [style.opacity]="isDeleting ? 0.6 : 1"
+                            style="padding: 8px 16px; background-color: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer;">
                         {{ isDeleting ? 'Deleting...' : 'Delete Car' }}
                     </button>
                 </div>

@@ -25,7 +25,7 @@ export class CarDetailsComponent implements OnInit {
   car = {} as Car;
   isLoading = true;
   isDeleting = false;
-  isAdmin = false;
+  isOwner = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -35,11 +35,15 @@ export class CarDetailsComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    this.isAdmin = this.userService.isAdmin;
     const id = this.route.snapshot.params['id'];
     this.carService.getSingleCar(id).subscribe(car => {
       this.car = car;
       this.isLoading = false;
+      
+      // Check if current user is the owner of the car
+      if (this.userService.user && this.car.userId) {
+        this.isOwner = this.userService.user._id === this.car.userId._id;
+      }
       console.log(car.userId);
     });
 

@@ -52,12 +52,34 @@
 .field input, .field select{
     border-radius: 5px;
     border: 1px solid #000;
+    padding: 0.5em;
+    font-size: 1em;
 }
 
-.error{
-    color: red;
+.field input:focus, .field select:focus{
+    outline: none;
+    border-color: #234465;
+    box-shadow: 0 0 5px rgba(35, 68, 101, 0.5);
+}
+
+.price-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    position: relative;
+}
+
+.price-input-wrapper input {
+    flex: 1;
+}
+
+.currency-label {
+    background-color: #f0f0f0;
+    padding: 0.5em 0.8em;
+    border-radius: 5px;
+    border: 1px solid #ddd;
     font-weight: bold;
-    font-size: 0.8em;
+    color: #234465;
 }
 
 

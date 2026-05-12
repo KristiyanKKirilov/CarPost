@@ -22,6 +22,7 @@ export class EditCarComponent implements OnInit {
   isLoading = true;
   isSaving = false;
   errorMessage = '';
+  isOwner = false;
 
    get user(): User | null {
       return this.userService.user || null;
@@ -39,6 +40,17 @@ export class EditCarComponent implements OnInit {
     this.carService.getSingleCar(id).subscribe(car => {
       this.car = car;
       this.isLoading = false;
+      
+      // Check if current user is the owner
+      if (this.userService.user && this.car.userId) {
+        this.isOwner = this.userService.user._id === this.car.userId._id;
+        
+        // Redirect if user is not owner
+        if (!this.isOwner) {
+          alert('You are not authorized to edit this car');
+          this.router.navigate([`/cars/${this.car._id}`]);
+        }
+      }
       console.log(car.userId);
     });
 

@@ -43,19 +43,33 @@ function auth(redirectUnauthenticated = true) {
     }
 }
 
-function isAdmin(req, res, next) {
-    if (!req.isLogged) {
-        return res.status(401).send({ message: "Unauthorized" });
-    }
+function isOwner(carModel) {
+    return function (req, res, next) {
+        if (!req.isLogged) {
+            return res.status(401).send({ message: "Unauthorized" });
+        }
 
-    if (!req.user.isAdmin) {
-        return res.status(403).send({ message: "Forbidden: Admin access required" });
-    }
+        const carId = req.params.carId;
+        
+        carModel.findById(carId)
+            .then(car => {
+                if (!car) {
+                    return res.status(404).send({ message: "Car not found" });
+                }
 
-    next();
+                const isOwner = car.userId.toString() === req.user._id.toString();
+
+                if (!isOwner) {
+                    return res.status(403).send({ message: "Forbidden: You can only edit/delete your own cars" });
+                }
+
+                next();
+            })
+            .catch(err => next(err));
+    };
 }
 
 module.exports = {
     auth,
-    isAdmin
+    isOwner
 };
