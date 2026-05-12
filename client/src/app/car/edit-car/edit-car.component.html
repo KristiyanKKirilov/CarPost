@@ -1,4 +1,4 @@
-@if(!isLoading && user?._id == car.userId._id){
+@if(!isLoading){
     <div class="container">
         <div class="current-car">
             <div class="car-details">
@@ -13,6 +13,11 @@
                 </main>
                 <form  #form="ngForm" (ngSubmit)="editCar(form)">
                 <aside class="car-info">
+                    @if(errorMessage){
+                        <div style="color: #d32f2f; margin-bottom: 15px; padding: 10px; background: #ffebee; border-radius: 4px;">
+                            {{ errorMessage }}
+                        </div>
+                    }
                     <div class="brand-model-edit">
                         <p>
                             <label for="brand">Brand</label>
@@ -21,6 +26,7 @@
                             id="brand"
                             [(ngModel)]="car.brand"
                             #brand="ngModel"
+                            [disabled]="isSaving"
                             required>
                         </p>
                         <p>
@@ -30,6 +36,7 @@
                             id="model"
                             [(ngModel)]="car.model"
                             #model="ngModel"
+                            [disabled]="isSaving"
                             required>
                         </p>
                     </div>
@@ -44,6 +51,7 @@
                         name="firstImageUrl"
                         [(ngModel)]="car.firstImageUrl"
                         #firstImageUrl="ngModel"
+                        [disabled]="isSaving"
                         required>
                     </p>
                     <p class="field">
@@ -54,6 +62,7 @@
                         name="secondImageUrl"
                         [(ngModel)]="car.secondImageUrl"
                         #secondImageUrl="ngModel"
+                        [disabled]="isSaving"
                         required>
                     </p>
                     <p class="field">
@@ -64,6 +73,7 @@
                         name="year"
                         [(ngModel)]="car.year"
                         #year="ngModel"
+                        [disabled]="isSaving"
                         required>
                     </p>
                     <p class="field">
@@ -74,6 +84,7 @@
                         name="price"
                         [(ngModel)]="car.price"
                         #price="ngModel"
+                        [disabled]="isSaving"
                         required>
                     </p>
                     <p class="field">
@@ -84,6 +95,7 @@
                         name="city"
                         [(ngModel)]="car.city"
                         #city="ngModel"
+                        [disabled]="isSaving"
                         required>
                     </p>
                     <p class="field">
@@ -94,6 +106,7 @@
                         name="engine"
                         [(ngModel)]="car.engine"
                         #engine="ngModel"
+                        [disabled]="isSaving"
                         required>
                     </p>
                     <p class="field">
@@ -104,6 +117,7 @@
                         name="kilometers"
                         [(ngModel)]="car.kilometers"
                         #kilometers="ngModel"
+                        [disabled]="isSaving"
                         required>
                     </p>
                     <p class="field">
@@ -114,6 +128,7 @@
                         name="gearbox"
                         [(ngModel)]="car.gearbox"
                         #gearbox="ngModel"
+                        [disabled]="isSaving"
                         required>
                     </p>
                     <p class="field">
@@ -124,6 +139,7 @@
                         name="color"
                         [(ngModel)]="car.color"
                         #color="ngModel"
+                        [disabled]="isSaving"
                         required>
                     </p>
                     <p class="field">
@@ -134,12 +150,13 @@
                         name="doors"
                         [(ngModel)]="car.doors"
                         #doors="ngModel"
+                        [disabled]="isSaving"
                         required>
                     </p>
                     <button 
                     class="edit-btn"
-                    [disabled]="form.invalid"
-                    [style]="{opacity: form.invalid ? 0.4 : 0.9 }">Edit</button>
+                    [disabled]="form.invalid || isSaving"
+                    [style]="{opacity: (form.invalid || isSaving) ? 0.4 : 0.9 }">{{ isSaving ? 'Saving...' : 'Edit' }}</button>
                 </div>
 
                 </aside>
@@ -149,7 +166,7 @@
             
         </div>
     </div>
-    }@else {
-        <app-loader/>
-    }
+}@else {
+    <app-loader/>
+}
     

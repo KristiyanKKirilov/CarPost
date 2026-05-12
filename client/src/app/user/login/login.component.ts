@@ -17,6 +17,8 @@ import { EMAILS } from '../../constants';
 })
 export class LoginComponent {
   emails: string[] = EMAILS;
+  isLoading: boolean = false;
+  errorMessage: string = '';
   
   form = new FormGroup({
     email: new FormControl('', [
@@ -36,11 +38,21 @@ export class LoginComponent {
       return;
     }
 
+    this.isLoading = true;
+    this.errorMessage = '';
     const {email ,password} = this.form.value;
     console.log(this.form.value);
     this.userService.login(email!, password!)
-    .subscribe(() => {
-      this.router.navigate(['/cars']);
+    .subscribe({
+      next: () => {
+        this.isLoading = false;
+        this.router.navigate(['/cars']);
+      },
+      error: (err) => {
+        this.isLoading = false;
+        this.errorMessage = err.error?.message || 'Login failed. Please try again.';
+        console.error('Login error:', err);
+      }
     })
   }
 }

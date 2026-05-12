@@ -17,6 +17,8 @@ import { EMAILS } from '../../constants';
 })
 export class RegisterComponent {
   emails: string[] = EMAILS;
+  isLoading: boolean = false;
+  errorMessage: string = '';
 
   form = new FormGroup({
     username: new FormControl('', [
@@ -41,6 +43,8 @@ export class RegisterComponent {
       return;
     }
 
+    this.isLoading = true;
+    this.errorMessage = '';
     console.log(this.form.value);
     const {
       username,
@@ -50,8 +54,16 @@ export class RegisterComponent {
     } = this.form.value;
 
     this.userService.register(username!, email!, phoneNumber!, password!)
-      .subscribe(() => {
-        this.router.navigate(['/cars']);
+      .subscribe({
+        next: () => {
+          this.isLoading = false;
+          this.router.navigate(['/cars']);
+        },
+        error: (err) => {
+          this.isLoading = false;
+          this.errorMessage = err.error?.message || 'Registration failed. Please try again.';
+          console.error('Registration error:', err);
+        }
       })
   }
 }

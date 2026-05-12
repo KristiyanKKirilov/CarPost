@@ -9,7 +9,7 @@ import { Car } from '../types/car';
 })
 export class UserService {
   private user$$ = new BehaviorSubject<User | null>(null);
-  private user$ = this.user$$.asObservable(); 
+  public user$ = this.user$$.asObservable(); 
   
     //unused
     USER_KEY = '[user]';
@@ -18,6 +18,10 @@ export class UserService {
   
     get isLogged(): boolean{
       return !!this.user;
+    }
+
+    get isAdmin(): boolean{
+      return this.user?.isAdmin || false;
     }
 
   constructor(private http: HttpClient) {

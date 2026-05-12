@@ -8,17 +8,20 @@ import { SlicePipe } from "../../shared/pipes/slice.pipe";
 import { ElapsedTimePipe } from "../../shared/pipes/elapsed-time.pipe";
 import { UserService } from '../../user/user.service';
 import { User } from '../../types/user';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-edit-car',
   standalone: true,
-  imports: [LoaderComponent, FormsModule, SlicePipe, ElapsedTimePipe],
+  imports: [LoaderComponent, FormsModule, SlicePipe, ElapsedTimePipe, CommonModule],
   templateUrl: './edit-car.component.html',
   styleUrl: './edit-car.component.css'
 })
 export class EditCarComponent implements OnInit {
   car = {} as Car;
   isLoading = true;
+  isSaving = false;
+  errorMessage = '';
 
    get user(): User | null {
       return this.userService.user || null;
@@ -46,6 +49,8 @@ export class EditCarComponent implements OnInit {
         return;
       }
 
+      this.isSaving = true;
+      this.errorMessage = '';
       const {
         brand, 
         model, 
@@ -77,8 +82,17 @@ export class EditCarComponent implements OnInit {
         doors, 
         firstImageUrl,
         secondImageUrl)
-        .subscribe(() =>{
-          this.router.navigate([`/cars/${this.car._id}`]);
+        .subscribe({
+          next: () =>{
+            this.isSaving = false;
+            alert('Car updated successfully');
+            this.router.navigate([`/cars/${this.car._id}`]);
+          },
+          error: (err) => {
+            this.isSaving = false;
+            this.errorMessage = err.error?.message || 'Failed to update car. Please try again.';
+            console.error('Update error:', err);
+          }
         });
   }
 

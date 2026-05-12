@@ -1,9 +1,17 @@
 <form [formGroup]="form" (ngSubmit)="login()">
 	<h1>Sign in</h1>
+	
+	@if(errorMessage){
+		<div style="color: #d32f2f; margin-bottom: 15px; padding: 10px; background: #ffebee; border-radius: 4px;">
+			{{ errorMessage }}
+		</div>
+	}
+	
 	<input 
 	type="email" 
 	name="email"
 	placeholder="Email"
+	[disabled]="isLoading"
 	formControlName="email" />
 
 	@if(form.get('email')?.touched){
@@ -26,6 +34,7 @@
 	type="password"
 	name="password"
 	placeholder="Password"
+	[disabled]="isLoading"
 	formControlName="password" />
 
 	@if(form.get('password')?.touched){
@@ -44,6 +53,8 @@
         </div>
     }
 	<button 
-	[disabled]="form.invalid"
-	[style]="{opacity: form.invalid ? 0.4 : 1}">Sign In</button>
+	[disabled]="form.invalid || isLoading"
+	[style]="{opacity: (form.invalid || isLoading) ? 0.4 : 1}">
+	{{ isLoading ? 'Signing in...' : 'Sign In' }}
+	</button>
 </form>

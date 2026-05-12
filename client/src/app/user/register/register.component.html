@@ -1,10 +1,18 @@
 <form [formGroup]="form" (ngSubmit)="register()">
     <h1>Create Account</h1>
+    
+    @if(errorMessage){
+        <div style="color: #d32f2f; margin-bottom: 15px; padding: 10px; background: #ffebee; border-radius: 4px;">
+            {{ errorMessage }}
+        </div>
+    }
+    
     <input
      type="text" 
      placeholder="Username"
      id="username"
      name="username"
+     [disabled]="isLoading"
      formControlName="username" />
 
      @if(form.get('username')?.touched){
@@ -28,6 +36,7 @@
     placeholder="Email"
     id="email"
     name="email"
+    [disabled]="isLoading"
     formControlName="email" />
 
     @if(form.get('email')?.touched){
@@ -52,6 +61,7 @@
     placeholder="Phone number"
     id="phoneNumber"
     name="phoneNumber"
+    [disabled]="isLoading"
     formControlName="phoneNumber" />
 
     @if(form.get('phoneNumber')?.touched){
@@ -69,6 +79,7 @@
     placeholder="Password"
     id="password"
     name="password"
+    [disabled]="isLoading"
     formControlName="password" />
 
     @if(form.get('password')?.touched){
@@ -88,6 +99,8 @@
     }
 
     <button
-    [disabled]="form.invalid"
-    [style]="{opacity: form.invalid ? 0.4 : 1}">Sign Up</button>
+    [disabled]="form.invalid || isLoading"
+    [style]="{opacity: (form.invalid || isLoading) ? 0.4 : 1}">
+    {{ isLoading ? 'Creating account...' : 'Sign Up' }}
+    </button>
 </form>

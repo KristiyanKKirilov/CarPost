@@ -43,4 +43,19 @@ function auth(redirectUnauthenticated = true) {
     }
 }
 
-module.exports = auth;
+function isAdmin(req, res, next) {
+    if (!req.isLogged) {
+        return res.status(401).send({ message: "Unauthorized" });
+    }
+
+    if (!req.user.isAdmin) {
+        return res.status(403).send({ message: "Forbidden: Admin access required" });
+    }
+
+    next();
+}
+
+module.exports = {
+    auth,
+    isAdmin
+};

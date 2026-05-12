@@ -7,5 +7,6 @@ export interface User{
     password: string;
     username: string;
     cars: string[];
+    isAdmin: boolean;
     created_at: string;
 };
