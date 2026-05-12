@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Car } from '../../types/car';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CarService } from '../car.service';
+import { BrandService } from '../../brand/brand.service';
 import { LoaderComponent } from '../../shared/loader/loader.component';
 import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SlicePipe } from "../../shared/pipes/slice.pipe";
 import { ElapsedTimePipe } from "../../shared/pipes/elapsed-time.pipe";
 import { UserService } from '../../user/user.service';
 import { User } from '../../types/user';
+import { Brand } from '../../types/brand';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -23,6 +25,7 @@ export class EditCarComponent implements OnInit {
   isSaving = false;
   errorMessage = '';
   isOwner = false;
+  brands: Brand[] = [];
 
    get user(): User | null {
       return this.userService.user || null;
@@ -32,10 +35,16 @@ export class EditCarComponent implements OnInit {
     private route: ActivatedRoute,
     private carService: CarService,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private brandService: BrandService
   ) { }
 
   ngOnInit(): void {
+    // Load brands first
+    this.brandService.getAllBrands().subscribe((brands) => {
+      this.brands = brands;
+    });
+
     const id = this.route.snapshot.params['id'];
     this.carService.getSingleCar(id).subscribe(car => {
       this.car = car;

@@ -54,10 +54,30 @@ function getAllCarsByCurrentBrand(req, res, next) {
         });
 }
 
+function getModelsByBrand(req, res, next) {
+    const { brandId } = req.params;
+
+    brandModel.findById(brandId)
+        .then(brand => {
+            if (!brand) {
+                return res.status(404).json({ message: 'Brand not found' });
+            }
+
+            return carModel.find({ brand: brand.name }).select('model').distinct('model');
+        })
+        .then(models => {
+            res.json(models);
+        })
+        .catch(error => {
+            next(error);
+        });
+}
+
 module.exports = {
     getBrand,
     createBrand,
     getAllBrands,
-    getAllCarsByCurrentBrand
+    getAllCarsByCurrentBrand,
+    getModelsByBrand
     // subscribe,
 }

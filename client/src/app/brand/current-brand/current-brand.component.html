@@ -1,5 +1,12 @@
 <div class="container">
-    <h2 class="container-title">{{cars[0].brand}} cars</h2>
+    <div class="header-section">
+        <h2 class="container-title">{{cars[0].brand}} cars</h2>
+        <button class="filter-btn" (click)="openFilterDialog()" title="Open filter menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
+        </button>
+    </div>
     @if(!isLoading){
 
     <div class="wrapper">
@@ -55,5 +62,13 @@
     </div>
     }@else {
     <app-loader />
+    }
+
+    @if(showFilterDialog) {
+        <app-filter-dialog 
+            [brandId]="brandId"
+            (filterApplied)="applyFilter($event)"
+            (dialogClosed)="closeFilterDialog()"
+        />
     }
 </div>

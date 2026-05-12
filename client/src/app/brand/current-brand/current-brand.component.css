@@ -12,13 +12,55 @@ ul li{
     padding: 3em;
 }
 
+.header-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  margin-bottom: 1em;
+}
+
 .container-title{
     text-align: center;
     color: #234465;
     font-size: 1.8em;
     text-shadow: 2px 2px #96b9dd;
     font-family: Rubik, sans-serif;
+    margin: 0;
 }
+
+.filter-btn {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(30, 144, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.filter-btn:hover {
+  background-color: #0066cc;
+  box-shadow: 0 4px 12px rgba(30, 144, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.filter-btn:active {
+  transform: scale(0.98);
+}
+
+.filter-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
 .wrapper{
   width: 100%;
   padding: 2em;

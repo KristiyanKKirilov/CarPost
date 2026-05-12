@@ -21,13 +21,18 @@
                     <div class="brand-model-edit">
                         <p>
                             <label for="brand">Brand</label>
-                            <input type="text" 
+                            <select 
                             name="brand"
                             id="brand"
                             [(ngModel)]="car.brand"
                             #brand="ngModel"
                             [disabled]="isSaving"
                             required>
+                                <option value="" disabled>Select a brand</option>
+                                @for (b of brands; track $index) {
+                                <option [value]="b.name">{{b.name}}</option>
+                                }
+                            </select>
                         </p>
                         <p>
                             <label for="model">Model</label>
@@ -100,14 +105,18 @@
                     </p>
                     <p class="field">
                         <label for="engine">Engine:</label>
-                        <input 
-                        type="text"
+                        <select 
                         id="engine"
                         name="engine"
                         [(ngModel)]="car.engine"
                         #engine="ngModel"
                         [disabled]="isSaving"
                         required>
+                            <option value="" disabled>Select engine type</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Benzin">Benzin</option>
+                            <option value="Gas">Gas</option>
+                        </select>
                     </p>
                     <p class="field">
                         <label for="kilometers">Kilometers:</label>
@@ -122,14 +131,17 @@
                     </p>
                     <p class="field">
                         <label for="gearbox">Gearbox:</label>
-                        <input 
-                        type="text"
+                        <select 
                         id="gearbox"
                         name="gearbox"
                         [(ngModel)]="car.gearbox"
                         #gearbox="ngModel"
                         [disabled]="isSaving"
                         required>
+                            <option value="" disabled>Select gearbox type</option>
+                            <option value="Manual">Manual</option>
+                            <option value="Automatic">Automatic</option>
+                        </select>
                     </p>
                     <p class="field">
                         <label for="color">Color:</label>

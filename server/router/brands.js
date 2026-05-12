@@ -8,6 +8,7 @@ router.get('/',  brandController.getAllBrands);
 router.post('/', brandController.createBrand);
 
 router.get('/:brandId', brandController.getAllCarsByCurrentBrand);
+router.get('/:brandId/models', brandController.getModelsByBrand);
 
 // router.get('/my-trips/:id/reservations', auth(), themeController.getReservations);
 

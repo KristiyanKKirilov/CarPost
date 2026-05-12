@@ -1,0 +1,97 @@
+<div class="filter-dialog-overlay" (click)="closeDialog()">
+  <div class="filter-dialog" (click)="$event.stopPropagation()">
+    <div class="filter-header">
+      <h2>Filter Cars</h2>
+      <button class="close-btn" (click)="closeDialog()">×</button>
+    </div>
+
+    <div class="filter-content">
+      <div class="filter-group">
+        <label for="model">Model</label>
+        @if(isLoadingModels) {
+          <p class="loading-text">Loading models...</p>
+        } @else {
+          <select 
+            id="model" 
+            [(ngModel)]="filterCriteria.model"
+            class="model-select"
+          >
+            <option value="">All Models</option>
+            @for (model of models; track model) {
+              <option [value]="model">{{ model }}</option>
+            }
+          </select>
+        }
+      </div>
+
+      <div class="filter-group-row">
+        <div class="filter-group">
+          <label for="yearFrom">Year From</label>
+          <input 
+            type="number" 
+            id="yearFrom" 
+            placeholder="Min year" 
+            [(ngModel)]="filterCriteria.yearFrom"
+          />
+        </div>
+
+        <div class="filter-group">
+          <label for="yearTo">Year To</label>
+          <input 
+            type="number" 
+            id="yearTo" 
+            placeholder="Max year" 
+            [(ngModel)]="filterCriteria.yearTo"
+          />
+        </div>
+      </div>
+
+      <div class="filter-group-row">
+        <div class="filter-group">
+          <label for="priceMin">Price Min</label>
+          <input 
+            type="number" 
+            id="priceMin" 
+            placeholder="Min price" 
+            [(ngModel)]="filterCriteria.priceMin"
+          />
+        </div>
+
+        <div class="filter-group">
+          <label for="priceMax">Price Max</label>
+          <input 
+            type="number" 
+            id="priceMax" 
+            placeholder="Max price" 
+            [(ngModel)]="filterCriteria.priceMax"
+          />
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label for="engine">Engine</label>
+        <input 
+          type="text" 
+          id="engine" 
+          placeholder="Enter engine type" 
+          [(ngModel)]="filterCriteria.engine"
+        />
+      </div>
+
+      <div class="filter-group">
+        <label for="gearbox">Gearbox</label>
+        <input 
+          type="text" 
+          id="gearbox" 
+          placeholder="Enter gearbox type" 
+          [(ngModel)]="filterCriteria.gearbox"
+        />
+      </div>
+    </div>
+
+    <div class="filter-footer">
+      <button class="btn-reset" (click)="resetFilter()">Reset</button>
+      <button class="btn-apply" (click)="applyFilter()">Apply Filter</button>
+    </div>
+  </div>
+</div>
